@@ -1,6 +1,8 @@
 import React from 'react';
-import { render } from 'react-dom'
+import { render } from 'react-dom';
 
+import store from '../index.jsx';
+import {actionConnect} from './actionConnect.jsx'
 require('./login.less')
 
 class Login extends React.Component {
@@ -16,8 +18,8 @@ class Login extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state.host);
-        event.preventDefault();
+        store.dispatch(actionConnect(this.state.host, this.state.port))
+        event.preventDefault()
     }
 
     handleHostChange(event) {

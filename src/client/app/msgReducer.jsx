@@ -1,6 +1,6 @@
 import React from 'react'
 
-function msgReducer(state = [], action) {
+function msgReducer(state, action) {
     switch (action.type) {
         case 'NEW_MSG':
             return [...state, action.payload]
