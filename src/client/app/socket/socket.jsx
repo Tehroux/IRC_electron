@@ -17,8 +17,11 @@ function connect(host, port) {
 }
 
 socket.on('data', function (data) {
-    console.log(data);
-    data.split('\n').map((t) => store.dispatch(newMsg(t)))
+    data.split('\n').map((t) => {
+        if (t.length > 1) {
+            store.dispatch(newMsg(t))
+        }
+    })
 });
 
 socket.on('connect', () => {

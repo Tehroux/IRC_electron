@@ -1,6 +1,8 @@
 import connect from './socket.jsx'
 
-export function hostReducer(state = [], action) {
+const initialState = {connected: false}
+
+export function hostReducer(state = initialState, action) {
         switch(action.type) {
             case 'hostEntered':
                 connect(action.payload.host, action.payload.port)
@@ -13,7 +15,7 @@ export function hostReducer(state = [], action) {
         }
 }
 
-export function connectReducer(state = [], action) {
+export function connectReducer(state = initialState, action) {
     switch (action.type) {
         case 'connected':
             return  Object.assign({}, state, {

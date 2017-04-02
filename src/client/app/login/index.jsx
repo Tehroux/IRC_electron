@@ -32,21 +32,23 @@ class Login extends React.Component {
 
     render() {
         return (
-            <form onSubmit={ this.handleSubmit }>
-                <div className="formElement">
-                    <input type="text" name="host" onChange={ this.handleHostChange } required />
-                    <label htmlFor="host">Host</label>
-                    <hr />
-                </div>
-                <div className="formElement">
-                    <input type="text" name="port" onChange={ this.handlePortChange } required />
-                    <label htmlFor="port">Port</label>
-                    <hr />
-                </div>
-                <div className="buttonContainer">
-                    <input type="submit" value="connect" className="button" />
-                </div>
-            </form>
+            <div className="formContainer">
+                <form onSubmit={ this.handleSubmit }>
+                    <div className="formElement">
+                        <input type="text" name="host" onChange={ this.handleHostChange } required />
+                        <label htmlFor="host">Host</label>
+                        <hr />
+                    </div>
+                    <div className="formElement">
+                        <input type="text" name="port" onChange={ this.handlePortChange } required />
+                        <label htmlFor="port">Port</label>
+                        <hr />
+                    </div>
+                    <div className="buttonContainer">
+                        <input type="submit" value="connect" className="button" />
+                    </div>
+                </form>
+            </div>
         );
     }
 };

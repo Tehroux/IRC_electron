@@ -1,9 +1,11 @@
 import React from 'react'
 
-function msgReducer(state, action) {
+const initialState = {msgList: []}
+
+function msgReducer(state = initialState, action) {
     switch (action.type) {
         case 'NEW_MSG':
-            return [...state, action.payload]
+            return {msgList: [...state.msgList, action.payload]}
         default:
             return state
     }

@@ -1,27 +1,4 @@
-@background: #303030;
-@card: #424242;
-@primary: #8c9eff;
-@normal: rgba(255, 255, 255, 0.5);
-@medium: rgba(255, 255, 255, 0.75);
-@full: #ffffff;
-
-@font-face {
-    font-family: Roboto;
-    src:url(./Roboto-Regular.ttf);
-}
-
-html {
-    font-family: Roboto;
-    background-color: @background;
-    height: 100%;
-}
-
-body {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+@import "../variable.less";
 
 form {
     color: @normal;
@@ -108,4 +85,12 @@ hr {
 .buttonContainer {
     height: 38px;
     position: relative;
+}
+
+.formContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
