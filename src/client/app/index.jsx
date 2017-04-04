@@ -5,10 +5,10 @@ import {render} from 'react-dom';
 import { createStore, combineReducers } from 'redux';
 import {Provider, connect} from 'react-redux'
 import Login from './login/index.jsx';
-import MsgLog from './telnet/messagelog.jsx'
+import Telnet from './telnet/telnet.jsx'
 
 import {hostReducer, connectReducer} from './socket/hostReducer.jsx'
-import msgReducer from './telnet/msgReducer.jsx'
+import msgReducer from './telnet/msglog/msgReducer.jsx'
 
 const initialState = {connected: false, msgList: ['nick']}
 
@@ -26,7 +26,7 @@ class App extends React.Component {
             );
         } else {
             return (
-                <MsgLog />
+                <Telnet/>
             );
         }
     }

@@ -1,8 +1,9 @@
-require('./telnet.less')
 import React from 'react';
 import {connect} from 'react-redux'
 
 var shortid = require('shortid');
+
+require('./msglog.less')
 
 class MessageLog extends React.Component {
 
