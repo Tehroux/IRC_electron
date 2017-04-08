@@ -34,7 +34,7 @@ class Login extends React.Component {
     render() {
         return (
             <div className="formContainer">
-                <form className="login" onSubmit={ this.handleSubmit }>
+                <form className="login card" onSubmit={ this.handleSubmit }>
                     <div className="formElement">
                         <input type="text" name="host" onChange={ this.handleHostChange } required />
                         <label htmlFor="host">Host</label>
