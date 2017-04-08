@@ -9,13 +9,6 @@ socket.setEncoding('utf8')
 
 var messageList = []
 
-function connect(host, port) {
-    socket.connect({
-        'port' : port
-    ,   'host': host
-    });
-}
-
 socket.on('data', function (data) {
     data.split('\n').map((t) => {
         if (t.length > 1) {
@@ -28,4 +21,12 @@ socket.on('connect', () => {
     store.dispatch(actionConnected())
 });
 
-export default connect;
+export function connect(host, port) {
+    socket.connect({
+        'port' : port
+    ,   'host': host
+    });
+}
+export function send(message) {
+  socket.write(message + '\n')
+}

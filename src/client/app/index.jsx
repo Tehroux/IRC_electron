@@ -7,7 +7,7 @@ import {Provider, connect} from 'react-redux'
 import Login from './login/index.jsx';
 import Telnet from './telnet/telnet.jsx'
 
-import {hostReducer, connectReducer} from './socket/hostReducer.jsx'
+import {hostReducer, connectReducer, sendMessage} from './socket/hostReducer.jsx'
 import msgReducer from './telnet/msglog/msgReducer.jsx'
 
 const initialState = {connected: false, msgList: ['nick']}
@@ -15,6 +15,7 @@ const initialState = {connected: false, msgList: ['nick']}
 let store = createStore(combineReducers({
     hostReducer
 ,   connectReducer
+,   sendMessage
 ,   msgReducer
 }));
 

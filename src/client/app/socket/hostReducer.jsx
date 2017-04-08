@@ -1,4 +1,4 @@
-import connect from './socket.jsx'
+import {connect, send} from './socket.jsx'
 
 const initialState = {connected: false}
 
@@ -24,4 +24,14 @@ export function connectReducer(state = initialState, action) {
         default:
             return state
     }
+}
+
+export function sendMessage(state = {}, action) {
+  switch (action.type) {
+    case 'SEND':
+      send(action.payload);
+      return state;
+    default:
+      return state;
+  }
 }
